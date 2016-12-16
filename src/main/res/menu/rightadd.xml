@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+      android:id="@+id/list_stack"
+      android:icon="@drawable/list"
+      android:orderInCategory="220"
+      android:title="@string/list_stack"
+      app:showAsAction="ifRoom"/>
+  <!-- Settings, should always be in the overflow -->
+  <item
+      android:id="@+id/add_contact"
+      android:icon="@drawable/ic_expandable"
+      android:orderInCategory="80"
+      android:title="@string/add_contact"
+      app:showAsAction="never"/>
+  <item
+      android:id="@+id/add_schedule"
+      android:icon="@drawable/ic_expandable"
+      android:orderInCategory="80"
+      android:title="@string/add_schedule"
+      app:showAsAction="never"/>
+  <item
+      android:id="@+id/list_contact"
+      android:icon="@drawable/ic_expandable"
+      android:orderInCategory="80"
+      android:title="@string/list_contact"
+      app:showAsAction="never"/>
+  <item
+      android:id="@+id/list_schedule"
+      android:icon="@drawable/ic_expandable"
+      android:orderInCategory="80"
+      android:title="@string/list_schedule"
+      app:showAsAction="never"/>
+  <item
+      android:id="@+id/stock_manager"
+      android:icon="@drawable/ic_expandable"
+      android:orderInCategory="80"
+      android:title="@string/stock_manager"
+      app:showAsAction="never"/>
+</menu>

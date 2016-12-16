@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
+  <dbname value="demo"></dbname>
+  <version value="1"></version>
+  <list>
+    <mapping class="ydxiaoyuan.myapplication.model.Contact"></mapping>
+    <mapping class="ydxiaoyuan.myapplication.model.KV"></mapping>
+  </list>
+  <!--
+     "internal" will act as default.
+      For example:
+      <storage value="external"></storage>
+  -->
+</litepal>

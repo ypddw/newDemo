@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimary">#3F51B5</color>
+  <color name="colorPrimaryDark">#303F9F</color>
+  <color name="colorAccent">#FF4081</color>
+  <color name="line_divider">#E2E2E2</color>
+  <color name="pre_order_background">#F8F8F8</color>
+  <color name="red_font_color">#FF6666</color>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+  <TextView
+      android:id="@+id/contact_name"
+      android:layout_weight="1"
+      android:minWidth="120dp"
+      android:padding="3dp"
+      android:text="联系人名"
+      style="@style/normal_textview"
+      />
+
+  <TextView
+      android:id="@+id/contact_addr"
+      android:layout_weight="1"
+      android:minWidth="120dp"
+      android:padding="3dp"
+      android:text="地址"
+      style="@style/normal_textview"
+      />
+  <TextView
+      android:id="@+id/contact_phone"
+      android:layout_weight="1"
+      android:minWidth="120dp"
+      android:padding="3dp"
+      android:text="电话"
+      style="@style/normal_textview"
+      />
+</LinearLayout>

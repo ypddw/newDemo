@@ -1,0 +1,11 @@
+<resources>
+  <string name="app_name">管理助手</string>
+  <string name="list_stack">堆栈列表</string>
+  <string name="stock_manager">库存管理</string>
+  <string name="add_contact">添加推荐人</string>
+  <string name="add_schedule">添加日程</string>
+  <string name="list_schedule">日程列表</string>
+  <string name="list_contact">推荐人列表</string>
+
+  <string name="click_list_contact">查看所有订单</string>
+</resources>

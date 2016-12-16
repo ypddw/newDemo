@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@+id/snack_parent"
+    style="@style/pre_order_background"
+    >
+  <include layout="@layout/title"/>
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+      <View style="@style/line_divider_h"/>
+
+
+      <android.support.design.widget.TextInputLayout
+          android:id="@+id/ref_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"
+          >
+
+        <EditText
+            android:id="@+id/ref_input_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="推荐人姓名"
+            />
+      </android.support.design.widget.TextInputLayout>
+
+
+      <android.support.design.widget.TextInputLayout
+          android:id="@+id/ref_phone"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"
+          >
+
+        <EditText
+            android:id="@+id/ref_input_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="推荐人电话"
+            android:inputType="phone"
+            android:maxLength="12"
+            />
+      </android.support.design.widget.TextInputLayout>
+      <android.support.design.widget.TextInputLayout
+          android:id="@+id/ref_addr"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_centerHorizontal="true"
+          android:layout_marginTop="10dp"
+          >
+
+        <EditText
+            android:id="@+id/ref_input_addr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="推荐人地址"
+            />
+      </android.support.design.widget.TextInputLayout>
+      <Button
+          android:id="@+id/btn_submit"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center_vertical"
+          android:layout_marginBottom="20dp"
+          android:layout_marginLeft="20dp"
+          android:layout_marginRight="20dp"
+          android:layout_marginTop="10dp"
+          android:background="@color/red_font_color"
+          android:gravity="center"
+          android:paddingBottom="13dp"
+          android:paddingTop="13dp"
+          android:text="添加"
+          android:textColor="#fff"
+          android:textSize="14sp"
+          />
+    </LinearLayout>
+  </ScrollView>
+</LinearLayout>
