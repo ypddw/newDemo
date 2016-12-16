@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.text.InputFilter;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,7 +18,9 @@ import org.greenrobot.eventbus.EventBus;
 import ydxiaoyuan.myapplication.R;
 import ydxiaoyuan.myapplication.base.BaseFragment;
 import ydxiaoyuan.myapplication.model.Contact;
+import ydxiaoyuan.myapplication.util.AppUtil;
 import ydxiaoyuan.myapplication.util.TextFilter;
+import ydxiaoyuan.myapplication.util.ToastUtil;
 
 import static ydxiaoyuan.myapplication.R.id.add;
 import static ydxiaoyuan.myapplication.R.id.btn_iv_right;
@@ -106,6 +109,15 @@ public class AddContactFragment extends BaseFragment {
       ref_addr = refAddrEditText.getText().toString();
       ref_name = refNameEditText.getText().toString();
       ref_phone = refPhoneEditText.getText().toString();
+      if (TextUtils.isEmpty(ref_addr)||TextUtils.isEmpty(ref_name)||TextUtils.isEmpty(ref_phone)){
+        ToastUtil.showToast(getActivity(),"不能为空");
+        return;
+      }
+      if (!AppUtil.isMobileNO(ref_phone)) {
+        ToastUtil.showToast(getActivity(),"电话号码不正确");
+        return;
+      }
+
       Contact contact = new Contact();
       contact.setAddress(ref_addr);
       contact.setName(ref_name);
@@ -118,6 +130,7 @@ public class AddContactFragment extends BaseFragment {
       e.printStackTrace();
       Snackbar.make(view.findViewById(R.id.snack_parent), "添加推荐人失败！", Snackbar.LENGTH_SHORT).show();
     } finally {
+      Logger.d("finally验证");
       btnSubmit.setEnabled(true);
     }
   }

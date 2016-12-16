@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
   compileSdkVersion 25
@@ -21,6 +22,11 @@ android {
   }
 }
 
+apt {
+  arguments {
+    eventBusIndex "ydxiaoyuan.myapplication.MyEventBusIndex"
+  }
+}
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -37,4 +43,6 @@ dependencies {
   compile 'com.orhanobut:logger:1.15'
   compile 'org.litepal.android:core:1.4.0'
   compile 'com.android.support:design:25.0.1'
+
+  apt 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 }

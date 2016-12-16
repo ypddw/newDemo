@@ -2,6 +2,8 @@ package ydxiaoyuan.myapplication.util;
 
 import android.content.SharedPreferences;
 import com.orhanobut.logger.Logger;
+import java.util.List;
+import org.litepal.crud.DataSupport;
 import ydxiaoyuan.myapplication.BaseApplication;
 import ydxiaoyuan.myapplication.model.KV;
 
@@ -31,5 +33,7 @@ public class InitUtil {
     kv.setKey("stock_chair");
     kv.setValue("0");
     kv.save();
+    List<KV> kvs2 = DataSupport.findAll(KV.class);
+    Logger.e("all kvs size - in init:"+kvs2.size());
   }
 }

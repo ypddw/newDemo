@@ -74,7 +74,7 @@ public class StockManagerFragment extends BaseFragment {
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
     view = inflater.inflate(R.layout.fragment_stock_manager, container, false);
-    setTitleText(view, "kucun");
+    setTitleText(view, "库存管理");
     setBackSupport(view, true);
     initView(view);
     return view;

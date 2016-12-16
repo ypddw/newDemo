@@ -26,6 +26,12 @@ import ydxiaoyuan.myapplication.model.Order;
 import ydxiaoyuan.myapplication.ui.contact.AddContactFragment;
 import ydxiaoyuan.myapplication.ui.contact.ContactFragment;
 import ydxiaoyuan.myapplication.ui.stock.StockManagerFragment;
+import ydxiaoyuan.myapplication.util.ToastUtil;
+import ydxiaoyuan.myapplication.ui.order.SearchOrderFragment;
+import ydxiaoyuan.myapplication.ui.schedule.AddScheduleFragment;
+import ydxiaoyuan.myapplication.ui.schedule.ScheduleFragment;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by arilpan@qq.com on 2016/12/15 in project MyApplication4.
@@ -77,14 +83,17 @@ public class MainFragment extends BaseFragment {
     datas.add(order);
     OrderAdapter orderAdapter = new OrderAdapter(context);
     orderAdapter.setDatas(datas);
+    info_list.setAdapter(orderAdapter);
 
     calendar = (CalendarView) view.findViewById(R.id.calendar);
     calendar.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
       @Override
       public void onSelectedDayChange(CalendarView view, int year, int month, int dayOfMonth) {
         // TODO Auto-generated method stub
-        String date = year + "年" + month + 1 + "月" + dayOfMonth + "日";
-        Toast.makeText(context, date, Toast.LENGTH_SHORT).show();
+        //String date = year + "年" + month + 1 + "月" + dayOfMonth + "日";
+        //Toast.makeText(context, date, Toast.LENGTH_SHORT).show();
+        ToastUtil.showToast(getActivity(), String.valueOf(year), "年", String.valueOf(month + 1),
+            "月", String.valueOf(dayOfMonth), "日");
       }
     });
     //startActivity(new Intent(Intent.ACTION_VIEW).setDataAndType(null, MainActivity.MIME_TYPE));
@@ -109,8 +118,9 @@ public class MainFragment extends BaseFragment {
           EventBus.getDefault().post(new StartBrotherEvent(AddContactFragment.newInstance()));
         } else if (menuItemId == R.id.add_schedule) {
           Logger.d("add_schedule");
-          Snackbar.make(view.findViewById(R.id.snack_parent), "add_schedule", Snackbar.LENGTH_SHORT)
-              .show();
+          //Snackbar.make(view.findViewById(R.id.snack_parent), "add_schedule", Snackbar.LENGTH_SHORT)
+          //    .show();
+          EventBus.getDefault().post(new StartBrotherEvent(AddScheduleFragment.newInstance()));
         } else if (menuItemId == R.id.list_contact) {
           Logger.d("list_contact");
           EventBus.getDefault().post(new StartBrotherEvent(ContactFragment.newInstance()));
@@ -120,12 +130,16 @@ public class MainFragment extends BaseFragment {
           //ContactFragment.newInstance("1");
 
           Logger.d("list_schedule");
-          Snackbar.make(view.findViewById(R.id.snack_parent), "list_schedule",
-              Snackbar.LENGTH_SHORT).show();
+          EventBus.getDefault().post(new StartBrotherEvent(ScheduleFragment.newInstance()));
+
+          //Snackbar.make(view.findViewById(R.id.snack_parent), "list_schedule",
+          //    Snackbar.LENGTH_SHORT).show();
         } else if (menuItemId == R.id.list_stack) {
           Logger.d("list_stack");
-          Snackbar.make(view.findViewById(R.id.activity_main), R.string.click_list_contact,
-              Snackbar.LENGTH_SHORT).show();
+          EventBus.getDefault().post(new StartBrotherEvent(SearchOrderFragment.newInstance()));
+
+          //Snackbar.make(view.findViewById(R.id.activity_main), R.string.click_list_contact,
+          //    Snackbar.LENGTH_SHORT).show();
         } else if (menuItemId == R.id.stock_manager) {
           Logger.d("stock_manager");
           //Snackbar.make(view.findViewById(R.id.activity_main), R.string.click_list_contact,
